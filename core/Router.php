@@ -1,8 +1,8 @@
 <?php
 
-namespace lib;
+namespace core;
 
-use lib\pages;
+use core\controllers;
 
 class Router {
 
