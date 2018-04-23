@@ -1,20 +1,20 @@
 <?php
 
 namespace core;
-
-use core\controllers;
+//
+//use core\controllers;
 
 class Router {
 
     static public function init() {
         $url = strtolower($_SERVER['REQUEST_URI']);
         $components_url = explode('/', $url);
-        $section = $components_url[1];
-        $action = $components_url[2];
+        $section = $components_url[2];
+        $action = $components_url[3];
         $section = ucfirst($section);
         //задаемм имя класса и метода поумолчанию
         if (empty($section)) {
-            $section = 'Main';
+            $section = 'tasks';
         }
         if (empty($action)) {
             $action = 'index';
