@@ -6,6 +6,11 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <style>
+            .container{
+                margin: 0;
+            }   
+        </style>
     </head>
     <body>
         <nav class="navbar navbar-light bg-light">
@@ -16,15 +21,16 @@
                 <tr>
                     <td>
                         <nav class="nav flex-column " >
-                            <a class="nav-link" href="#">Главная страница</a>
-                            <a class="nav-link" href="#">Мои задачи</a>
-                            <a class="nav-link" href="#">Архив</a>
-                            <a class="nav-link" href='#'>Добавить задачу</a>
+                            <a class="nav-link" href="/index">Назначенные</a>
+                            <a class="nav-link" href="/my">Выполняемые</a>
+                            <a class="nav-link" href="/appointed">Мои задачи</a>
+                            <a class="nav-link" href="/ahchive">Архив</a>
+                            <a class="nav-link" href="/add">Добавить задачу</a>
                             <a class="nav-link" href="#">Все пользователи</a>
                         </nav>
                     </td>
                     <td>
-                        <?php include_once 'template' . DIRECTORY_SEPARATOR . $this->content_view . '.php'; ?>
+                        <?php include_once 'template' . DIRECTORY_SEPARATOR . $this->content_view ; ?>
                     </td>
                 </tr>
             </table>

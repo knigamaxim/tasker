@@ -1,4 +1,4 @@
 <?php
 session_start();
-//include_once 'lib/autoloader.php';
-lib\Router::init();
+include_once 'core/autoloader.php';
+core\Router::init();
