@@ -4,7 +4,7 @@ namespace core\models;
 
 use mysqli;
 
-class ProcessorAuth extends AbstractModel {
+class ModelAuth extends AbstractModel {
 
     public function __construct() {
         parent::__construct();
