@@ -20,7 +20,8 @@ class ModelTasks extends AbstractModel{
 //	$query="INSERT INTO ".$this->table." (name, short_text, text, date) VALUES ('".$news['name']."', '".$news['short_text']."', '".$news['text']."', '".$news['date']."')";	
 //	return $this->db->query($query);
 //    }
-   
+
+
 
     
     
