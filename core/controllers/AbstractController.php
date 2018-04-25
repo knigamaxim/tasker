@@ -2,6 +2,7 @@
 
 namespace core\controllers;
 use core\Views;
+use core\defaultable;
 
 abstract class AbstractController implements defaultable {
       /**
