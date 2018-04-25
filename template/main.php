@@ -24,7 +24,7 @@
                         </nav>
                     </td>
                     <td>
-                        <?php include_once 'template' . DIRECTORY_SEPARATOR . $this->content_view . '.php'; ?>
+                        <?php include_once 'template' . DIRECTORY_SEPARATOR . $this->content_view ; ?>
                     </td>
                 </tr>
             </table>
