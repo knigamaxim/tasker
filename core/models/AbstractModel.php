@@ -1,9 +1,11 @@
 <?php
 
 namespace core\models;
+
 use mysqli;
+
 abstract class AbstractModel {
-    
+
     /**
      *
      * @var mysqli
@@ -45,5 +47,4 @@ abstract class AbstractModel {
 //	}
 //	return false;
 //    }
-
 }
