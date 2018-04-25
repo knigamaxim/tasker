@@ -1,5 +1,8 @@
 <?php
-
+namespace core\controllers;
+use core\controllers\AbstractController;
+use core\models\ModelAuth;
+use core\Router;
 class Auth extends AbstractController {
 
     public function __construct() {
