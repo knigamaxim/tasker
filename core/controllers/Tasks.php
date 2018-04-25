@@ -1,5 +1,8 @@
 <?php
 
+namespace core\controllers;
+use core\models\ModelTasks;
+
 class Tasks extends AbstractController{
     
     /**
@@ -11,4 +14,9 @@ class Tasks extends AbstractController{
         $this->model = new ModelTasks();
      }
     
+      public function action_index() {
+        $this->viewer->tasks = $this->model->all();
+        $this->viewer->content_view = 'tasks_index_view.php';
+        $this->viewer->show();
+    }
 }

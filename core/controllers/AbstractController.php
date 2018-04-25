@@ -1,5 +1,7 @@
 <?php
 
+namespace core\controllers;
+use core\Views;
 
 abstract class AbstractController implements defaultable {
       /**
@@ -14,7 +16,7 @@ abstract class AbstractController implements defaultable {
     protected $model;
 
     public function __construct() {
-	$this->displayer = new Views();
+	$this->viewer = new Views();
     }
 
     
