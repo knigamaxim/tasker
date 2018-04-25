@@ -1,5 +1,8 @@
 <?php
 
+namespace core\controllers;
+use core\models\ModelTasks;
+
 class Tasks extends AbstractController{
     
     /**
