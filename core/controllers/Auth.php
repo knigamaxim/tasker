@@ -4,18 +4,18 @@ class Auth extends AbstractController {
 
     public function __construct() {
         parent::__construct();
-        $this->processor = new ModelAuth();
-        $this->displayer->template = "auth_template.php";
+        $this->model = new ModelAuth();
+        $this->views->template = "auth_template.php";
     }
 
     public function action_index() {
-        $this->displayer->content_view = "auth.php";
-        $this->displayer->show();
+        $this->views->content_view = "auth.php";
+        $this->views->show();
     }
 
     public function action_register() {
-        $this->displayer->content_view = "register.php";
-        $this->displayer->show();
+        $this->views->content_view = "register.php";
+        $this->views->show();
     }
 
     //Регистрация
@@ -24,7 +24,7 @@ class Auth extends AbstractController {
         $user['referral_link'] = self::generateLink(12);
         if ($this->user_validate($user)) {
             $user['password'] = password_hash($user['password'], PASSWORD_DEFAULT);
-            $this->processor->addUser($user);
+            $this->model->addUser($user);
         }
         Router::redirect('auth/');
     }
@@ -32,8 +32,7 @@ class Auth extends AbstractController {
     //Авторизация
     public function action_signin() {
         $user = filter_input_array(INPUT_POST);
-        $user_item = $this->processor->selectByName($user['login']);
-
+        $user_item = $this->model->selectByName($user['login']);
         if ($user_item) {
             if (password_verify($user['password'], $user_item->password)) {
                 $_SESSION['login'] = $user_item->login;
@@ -47,7 +46,7 @@ class Auth extends AbstractController {
         if ($user['password'] !== $user['password_confirm']) {
             return false;
         }
-        $user_item = $this->processor->selectByName($user['login']);
+        $user_item = $this->model->selectByName($user['login']);
         if ($user_item) {
             return false;
         }
