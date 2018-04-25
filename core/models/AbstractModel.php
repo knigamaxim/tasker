@@ -5,7 +5,7 @@ namespace core\models;
 use mysqli;
 
 abstract class AbstractModel {
-<<<<<<< .mine
+
 
     /**
      *
@@ -20,49 +20,7 @@ abstract class AbstractModel {
     public $table;
 
     public function __construct() {
-	$this->db = new mysqli('localhost', 'root', '', 'tasklist');
-    }
-
-    public function all() {
-	$query = "SELECT * FROM " . $this->table;
-	$result = $this->db->query($query);
-	if ($result) {
-	    return $result->fetch_all(MYSQLI_ASSOC);
-	}
-	return false;
-    }
-
-//    public function selectByID($id) {
-//	$query = "SELECT * FROM " . $this->table . " WHERE ID=" . $id." LIMIT 1";
-//	$result = $this->db->query($query);
-//	if ($result) {
-//	    return $result->fetch_object();
-//	}
-//	return false;
-//    }
-//    public function selectByName($name) {
-//	$query = "SELECT * FROM " . $this->table . " WHERE login='".$name."' LIMIT 1";
-//	$result = $this->db->query($query);
-//	if ($result) {
-//	    return $result->fetch_object();
-//	}
-//	return false;
-//    }
-=======
-    /**
-     *
-     * @var mysqli
-     */
-    protected $db;
-
-    /**
-     *
-     * @var string 
-     */
-    public $table;
-
-    public function __construct() {
-	$this->db = new mysqli('localhost', 'root', '', 'tasklist');
+	$this->db = new mysqli('localhost', 'root', '', 'taskslist');
     }
 
     public function all() {
@@ -91,5 +49,4 @@ abstract class AbstractModel {
 
 
 
->>>>>>> .theirs
 }
