@@ -19,4 +19,20 @@ class Tasks extends AbstractController{
         $this->viewer->content_view = 'tasks_index_view.php';
         $this->viewer->show();
     }
+      public function action_appointed() {
+        $this->viewer->tasks = $this->model->appointed();
+        $this->viewer->content_view = 'tasks_index_view.php';
+        $this->viewer->show();
+    }
+      public function action_archive() {
+        $this->viewer->tasks = $this->model->archive();
+        $this->viewer->content_view = 'tasks_index_view.php';
+        $this->viewer->show();
+    }
+      public function action_add() {
+        $this->viewer->tasks = $this->model->add();
+        $this->viewer->content_view = 'tasks_add_view.php';
+        $this->viewer->show();
+    }
+    
 }
