@@ -1,8 +1,11 @@
 <?php
+namespace core\models;
+
 
 /**
  * класс для работы с ТАSKS-заданиями
  */
+
 class ModelTasks extends AbstractModel{
     
      public function __construct() {

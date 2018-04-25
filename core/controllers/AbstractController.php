@@ -1,5 +1,7 @@
 <?php
 
+namespace core\controllers;
+use core\Views;
 
 abstract class AbstractController implements defaultable {
       /**
