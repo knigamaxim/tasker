@@ -8,17 +8,17 @@ class Auth extends AbstractController {
     public function __construct() {
         parent::__construct();
         $this->model = new ModelAuth();
-        $this->views->template = "auth_template.php";
+        $this->viewer->template = "auth_template.php";
     }
 
     public function action_index() {
-        $this->views->content_view = "auth.php";
-        $this->views->show();
+        $this->viewer->content_view = "auth.php";
+        $this->viewer->show();
     }
 
     public function action_register() {
-        $this->views->content_view = "register.php";
-        $this->views->show();
+        $this->viewer->content_view = "register.php";
+        $this->viewer->show();
     }
 
     //Регистрация

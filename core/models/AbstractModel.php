@@ -20,7 +20,7 @@ abstract class AbstractModel {
     public $table;
 
     public function __construct() {
-	$this->db = new mysqli('localhost', 'root', '', 'taskslist');
+	$this->db = new mysqli('localhost', 'root', 'Px24r49', 'tasklist');
     }
 
     

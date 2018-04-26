@@ -11,7 +11,8 @@
                  <th>Добавлено</th>
                 
              </tr>
-             <?php 
+             <?php
+             var_dump($this->tasks); 
              $i=1;
              foreach ($this->tasks as $task_item):?>
              <tr>

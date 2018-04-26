@@ -86,7 +86,7 @@
     </head>
     <body>
         <main>
-            <?php include_once 'views/' . $this->content_view; ?>
+            <?php include_once  $this->content_view; ?>
         </main>
     </body>
 </html>
