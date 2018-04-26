@@ -8,8 +8,8 @@ class Router {
         //разделяет строку / и возвращает массив
 	$components_url = explode('/', $url);
         // присваиваем разделенную строку в переменную 
-     	$section = $components_url[2];
-	$action = $components_url[3];
+     	$section = $components_url[1];
+	$action = $components_url[2];
 	$section = ucfirst($section);
 	//задаемм имя класса и метода поумолчанию
 	if (empty($section)) {

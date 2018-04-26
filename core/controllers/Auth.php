@@ -41,7 +41,7 @@ class Auth extends AbstractController {
                 $_SESSION['login'] = $user_item->login;
             }
         }
-        Router::redirect('admin/');
+        Router::redirect('tasks/');
     }
 
     //Проверки
