@@ -17,9 +17,11 @@ class Tasks extends AbstractController{
      }
     
       public function action_index() {
-//        $this->viewer->tasks = $this->model->new_tasks();
-//        $this->viewer->content_view = 'tasks_index_b_view.php';
-////        $this->viewer->show();
+        $this->viewer->tasks = $this->model->new_tasks();
+        $this->viewer->content_view = 'tasks_index_b_view.php';
+        $this->viewer->show();
+}
+    public function action_my() {
         $this->viewer->tasks = $this->model->all();
         $this->viewer->content_view = 'tasks_index_view.php';
         $this->viewer->show();
@@ -31,7 +33,7 @@ class Tasks extends AbstractController{
     }
       public function action_archive() {
         $this->viewer->tasks = $this->model->archive();
-        $this->viewer->content_view = 'tasks_index_view.php';
+        $this->viewer->content_view = 'tasks_archive_view.php';
         $this->viewer->show();
     }
       public function action_add() {

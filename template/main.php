@@ -21,10 +21,11 @@
                 <tr>
                     <td>
                         <nav class="nav flex-column " >
-                            <a class="nav-link" href="#">Главная страница</a>
-                            <a class="nav-link" href="#">Мои задачи</a>
-                            <a class="nav-link" href="#">Архив</a>
-                            <a class="nav-link" href='#'>Добавить задачу</a>
+                            <a class="nav-link" href="/index">Назначенные</a>
+                            <a class="nav-link" href="/my">Выполняемые</a>
+                            <a class="nav-link" href="/appointed">Мои задачи</a>
+                            <a class="nav-link" href="/ahchive">Архив</a>
+                            <a class="nav-link" href="/add">Добавить задачу</a>
                             <a class="nav-link" href="#">Все пользователи</a>
                         </nav>
                     </td>
