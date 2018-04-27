@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title></title>
+        <title>Main page</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -15,21 +15,23 @@
     <body>
         <nav class="navbar navbar-light bg-light">
             <a class="navbar-brand" href="#">Личный кабинет</a>
+            <a href="/auth/exit">Выход</a>
         </nav>
         <div class="container">
             <table class="table">
                 <tr>
                     <td>
                         <nav class="nav flex-column " >
-                            <a class="nav-link" href="#">Все задачи</a>
-                            <a class="nav-link" href="#">Мои задачи</a>
-                            <a class="nav-link" href="#">Архив</a>
-                            <a class="nav-link" href='#'>Добавить задачу</a>
+                            <a class="nav-link" href="/tasks/index">Назначенные</a>
+                            <a class="nav-link" href="/tasks/my">Выполняемые</a>
+                            <a class="nav-link" href="/tasks/appointed">Мои задачи</a>
+                            <a class="nav-link" href="/tasks/archive">Архив</a>
+                            <a class="nav-link" href="/tasks/add">Добавить задачу</a>
                             <a class="nav-link" href="#">Все пользователи</a>
                         </nav>
                     </td>
                     <td>
-                     <img src="/images/page_not_found.jpg" alt="page not found" />
+                        <img src="/images/page_not_found.jpg" alt="page not found" />
                     </td>
                 </tr>
             </table>
@@ -44,3 +46,6 @@
     </body>
 
 </html>
+
+
+
