@@ -34,14 +34,15 @@ class Auth extends AbstractController {
 
     //Авторизация
     public function action_signin() {
-        $user = filter_input_array(INPUT_POST);
+        $user = filter_input_array(INPUT_POST);        
         $user_item = $this->model->selectByName($user['login']);
         if ($user_item) {
             if (password_verify($user['password'], $user_item->password)) {
                 $_SESSION['login'] = $user_item->login;
+                echo 'qqqqqqqqqqq';
             }
         }
-        Router::redirect('tasks/');
+//        Router::redirect('tasks/');
     }
 
     //Проверки

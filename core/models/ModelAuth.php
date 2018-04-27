@@ -17,10 +17,15 @@ class ModelAuth extends AbstractModel {
             return $this->db->query($query);
         }
     }
-        public function selectByName($user) {
+
+    public function selectByName($user) {
         if ($this->db->connect_errno === 0) {
-            $query = "SELECT * FROM " . $this->table . " WHERE name LIKE ".$user.";";
-            return $this->db->query($query);
+            $query = "SELECT * FROM " . $this->table . " WHERE name LIKE " . $user . ";";
+            $result = $this->db->query($query);
+            if ($result) {
+                return $result->fetch_all(MYSQLI_ASSOC);
+            }
+            return false;
         }
     }
 

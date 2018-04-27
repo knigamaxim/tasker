@@ -13,6 +13,8 @@
              </tr>
              <?php
              var_dump($this->tasks); 
+             var_dump($_SESSION['login']); 
+             var_dump($_SESSION); 
              $i=1;
              foreach ($this->tasks as $task_item):?>
              <tr>
