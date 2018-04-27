@@ -1,45 +1,51 @@
 <?php
 
 namespace core\controllers;
+
 use core\models\ModelTasks;
 use core\Router;
 
+class Tasks extends AbstractController {
 
-class Tasks extends AbstractController{
-    
     /**
      * Конструкт для ТАСКС
      */
-    
-     public function __construct() {
+    public function __construct() {
+        if (!Auth::getAuthLogin()) {
+            Router::redirect('auth/');
+        }
         parent::__construct();
         $this->model = new ModelTasks();
-     }
-    
-      public function action_index() {
+    }
+
+    public function action_index() {
         $this->viewer->tasks = $this->model->new_tasks();
         $this->viewer->content_view = 'tasks_index_b_view.php';
         $this->viewer->show();
-}
+    }
+
     public function action_my() {
         $this->viewer->tasks = $this->model->all();
         $this->viewer->content_view = 'tasks_index_view.php';
         $this->viewer->show();
     }
-      public function action_appointed() {
+
+    public function action_appointed() {
         $this->viewer->tasks = $this->model->appointed();
         $this->viewer->content_view = 'tasks_index_view.php';
         $this->viewer->show();
     }
-      public function action_archive() {
+
+    public function action_archive() {
         $this->viewer->tasks = $this->model->archive();
         $this->viewer->content_view = 'tasks_archive_view.php';
         $this->viewer->show();
     }
-      public function action_add() {
+
+    public function action_add() {
         $this->viewer->tasks = $this->model->add();
         $this->viewer->content_view = 'tasks_add_view.php';
         $this->viewer->show();
     }
-    
+
 }
