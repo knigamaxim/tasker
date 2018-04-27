@@ -30,7 +30,7 @@ class Router {
 		if (method_exists($obj, $action_method)) {
 		    $obj->$action_method();
 		} else {
-		    self::notFound();
+		    self::notFoundAction();
 		}
 	    }
 	} else {
@@ -41,6 +41,12 @@ class Router {
     static public function notFound() {
 	header($_SERVER['SERVER_PROTOCOL'] . " 404 Not Found");
 	include_once 'template/404.php';
+	exit();
+    }
+    //Если не найден action
+      static public function notFoundAction() {
+	header($_SERVER['SERVER_PROTOCOL'] . " 404 Not Found");
+	include_once 'template/404_action.php';
 	exit();
     }
     
