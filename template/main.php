@@ -15,7 +15,7 @@
     <body>
         <nav class="navbar navbar-light bg-light">
             <a class="navbar-brand" href="#">Личный кабинет</a>
-            <a type="button" href="/auth/exit">Выйти</a>
+            <a href="/auth/exit">Выход</a>
         </nav>
         <div class="container">
             <table class="table">
