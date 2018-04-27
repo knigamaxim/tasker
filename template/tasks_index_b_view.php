@@ -12,8 +12,8 @@
                 
              </tr>
              <?php
-             var_dump($this->tasks); 
-             var_dump($_SESSION['login']); 
+//             var_dump($this->tasks); 
+//             var_dump($_SESSION['login']); 
              var_dump($_SESSION); 
              $i=1;
              foreach ($this->tasks as $task_item):?>
@@ -30,7 +30,7 @@
                 <td><?= $task_item['priority.name'] ?></td>
                  <td><?= $task_item['start_date'] ?></td>
                  <td><?= $task_item['deadline'] ?></td>
-                 <td><?= $task_item['users.name'] ?></td>
+                 <td><?= $task_item['users.login'] ?></td>
                  
              </tr>
              <?php $i++?>

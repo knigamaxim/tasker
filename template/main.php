@@ -15,17 +15,18 @@
     <body>
         <nav class="navbar navbar-light bg-light">
             <a class="navbar-brand" href="#">Личный кабинет</a>
+            <a type="button" href="/auth/exit">Выйти</a>
         </nav>
         <div class="container">
             <table class="table">
                 <tr>
                     <td>
                         <nav class="nav flex-column " >
-                            <a class="nav-link" href="/index">Назначенные</a>
-                            <a class="nav-link" href="/my">Выполняемые</a>
-                            <a class="nav-link" href="/appointed">Мои задачи</a>
-                            <a class="nav-link" href="/ahchive">Архив</a>
-                            <a class="nav-link" href="/add">Добавить задачу</a>
+                            <a class="nav-link" href="/tasks/index">Назначенные</a>
+                            <a class="nav-link" href="/tasks/my">Выполняемые</a>
+                            <a class="nav-link" href="/tasks/appointed">Мои задачи</a>
+                            <a class="nav-link" href="/tasks/archive">Архив</a>
+                            <a class="nav-link" href="/tasks/add">Добавить задачу</a>
                             <a class="nav-link" href="#">Все пользователи</a>
                         </nav>
                     </td>

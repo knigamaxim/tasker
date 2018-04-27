@@ -1,8 +1,11 @@
 <?php
+
 namespace core\controllers;
+
 use core\controllers\AbstractController;
 use core\models\ModelAuth;
 use core\Router;
+
 class Auth extends AbstractController {
 
     public function __construct() {
@@ -34,15 +37,21 @@ class Auth extends AbstractController {
 
     //Авторизация
     public function action_signin() {
-        $user = filter_input_array(INPUT_POST);        
-        $user_item = $this->model->selectByName($user['login']);
+        $user = filter_input_array(INPUT_POST);
+        $user_login = $user['login'];
+
+        $user_item = $this->model->selectByName($user_login);
+
         if ($user_item) {
             if (password_verify($user['password'], $user_item->password)) {
                 $_SESSION['login'] = $user_item->login;
-                echo 'qqqqqqqqqqq';
+                Router::redirect('tasks/');
+            } else {
+                Router::redirect('auth/');
             }
+        } else {
+            Router::redirect('auth/');
         }
-//        Router::redirect('tasks/');
     }
 
     //Проверки
@@ -66,8 +75,10 @@ class Auth extends AbstractController {
 
     //Выход из сессии
     public function action_exit() {
-        session_destroy();
-        Router::redirect('auth/');
+        if (session_destroy()) {
+
+            Router::redirect('auth/');
+        }
     }
 
     //Генерируем referral_link исходя из имени и фамилии
