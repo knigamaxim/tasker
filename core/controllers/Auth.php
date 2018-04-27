@@ -1,21 +1,24 @@
 <?php
-
+namespace core\controllers;
+use core\controllers\AbstractController;
+use core\models\ModelAuth;
+use core\Router;
 class Auth extends AbstractController {
 
     public function __construct() {
         parent::__construct();
         $this->model = new ModelAuth();
-        $this->views->template = "auth_template.php";
+        $this->viewer->template = "auth_template.php";
     }
 
     public function action_index() {
-        $this->views->content_view = "auth.php";
-        $this->views->show();
+        $this->viewer->content_view = "auth.php";
+        $this->viewer->show();
     }
 
     public function action_register() {
-        $this->views->content_view = "register.php";
-        $this->views->show();
+        $this->viewer->content_view = "register.php";
+        $this->viewer->show();
     }
 
     //Регистрация
@@ -31,14 +34,15 @@ class Auth extends AbstractController {
 
     //Авторизация
     public function action_signin() {
-        $user = filter_input_array(INPUT_POST);
+        $user = filter_input_array(INPUT_POST);        
         $user_item = $this->model->selectByName($user['login']);
         if ($user_item) {
             if (password_verify($user['password'], $user_item->password)) {
                 $_SESSION['login'] = $user_item->login;
+                echo 'qqqqqqqqqqq';
             }
         }
-        Router::redirect('admin/');
+//        Router::redirect('tasks/');
     }
 
     //Проверки

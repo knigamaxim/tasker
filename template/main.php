@@ -21,10 +21,18 @@
                 <tr>
                     <td>
                         <nav class="nav flex-column " >
+<<<<<<< HEAD
                             <a class="nav-link" href="#">Все задачи</a>
                             <a class="nav-link" href="#">Мои задачи</a>
                             <a class="nav-link" href="#">Архив</a>
                             <a class="nav-link" href='#'>Добавить задачу</a>
+=======
+                            <a class="nav-link" href="/index">Назначенные</a>
+                            <a class="nav-link" href="/my">Выполняемые</a>
+                            <a class="nav-link" href="/appointed">Мои задачи</a>
+                            <a class="nav-link" href="/ahchive">Архив</a>
+                            <a class="nav-link" href="/add">Добавить задачу</a>
+>>>>>>> 607591410f0f57b003bb6a44b6d121c61e049b01
                             <a class="nav-link" href="#">Все пользователи</a>
                         </nav>
                     </td>

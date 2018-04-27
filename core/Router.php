@@ -13,7 +13,7 @@ class Router {
 	$section = ucfirst($section);
 	//задаемм имя класса и метода поумолчанию
 	if (empty($section)) {
-	    $section = 'Main';
+	    $section = 'auth';
 	}
 	if (empty($action)) {
 	    $action = 'index';
@@ -22,6 +22,7 @@ class Router {
 	$action_method = 'action_' . $action;
 	$section="\core\controllers\\".$section;
 	if (class_exists($section)) {
+
 	    $obj = new $section();
 	    if (is_numeric($action)) {
 		//для переадресации числовых методов на __call

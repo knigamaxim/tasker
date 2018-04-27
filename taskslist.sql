@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 26 2018 г., 09:09
+-- Время создания: Апр 26 2018 г., 00:48
 -- Версия сервера: 5.6.37
 -- Версия PHP: 5.5.38
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `tasklist`
+-- База данных: `taskslist`
 --
 
 -- --------------------------------------------------------
@@ -38,9 +38,9 @@ CREATE TABLE `priority` (
 --
 
 INSERT INTO `priority` (`id`, `name`) VALUES
-(1, 'Низкий'),
+(1, 'Высокий'),
 (2, 'Средний'),
-(3, 'Высокий');
+(3, 'Низкий');
 
 -- --------------------------------------------------------
 
@@ -58,9 +58,9 @@ CREATE TABLE `status` (
 --
 
 INSERT INTO `status` (`id`, `name`) VALUES
-(1, 'В ожидании'),
+(1, 'Назначено'),
 (2, 'Выполняется'),
-(3, 'Готово');
+(3, 'Выполнено');
 
 -- --------------------------------------------------------
 
@@ -85,11 +85,9 @@ CREATE TABLE `tasks` (
 --
 
 INSERT INTO `tasks` (`id`, `name`, `user_id`, `description`, `status_id`, `priority_id`, `start_date`, `deadline`, `master_id`) VALUES
-(1, 'Хоз работы', 3, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\n2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 1, 1, '2018-04-26', '2018-04-30', 1),
-(2, 'Покраска', 2, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 1, 3, '2018-04-26', '2018-04-29', 1),
-(3, 'Тарировка каналов на АПК', 2, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 1, 3, '2018-04-24', '2018-04-28', 1),
-(4, 'Тест взята в обработку', 2, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 2, 3, '2018-04-25', '2018-04-28', 1),
-(5, 'тест Готово', 2, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 3, 3, '2018-04-24', '2018-04-27', 1);
+(1, 'Задача 1', 2, 'НАЗНАЧЕНА', 1, 1, '2018-04-01', '2018-04-28', 1),
+(2, 'Задача2', 2, 'ВЫПОЛНЯЕТСЯ', 2, 3, '2018-04-02', '2018-04-28', 2),
+(3, 'Задача 3', 1, 'ВЫПОЛНЕНА', 3, 1, '2018-04-01', '2018-04-04', 2);
 
 -- --------------------------------------------------------
 
@@ -111,9 +109,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `surname`, `login`, `password`, `referral_link`) VALUES
-(1, 'Константин', 'Рябушенко', 'kostetr', '49', 'root'),
-(2, 'Андрей', 'Сопин', 'batman', '49', 'root2'),
-(3, 'Константин', 'Павлючик', 'kos', '49', 'kostetr');
+(1, 'admin', 'Adm', 'admin', '123', ''),
+(2, 'Serg', 'Seeeerv', 'user', '', '');
 
 --
 -- Индексы сохранённых таблиц
@@ -165,12 +162,12 @@ ALTER TABLE `status`
 -- AUTO_INCREMENT для таблицы `tasks`
 --
 ALTER TABLE `tasks`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- Ограничения внешнего ключа сохраненных таблиц
 --
