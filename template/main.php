@@ -10,12 +10,19 @@
             .container{
                 margin: 0;
             }   
+            table,tr,td,th {
+                white-space: nowrap;
+            }
+            .with-br {
+                white-space: normal;
+            }
+
         </style>
     </head>
     <body>
         <nav class="navbar navbar-light bg-light">
             <a class="navbar-brand" href="#">Личный кабинет</a>
-            <a href="/auth/exit">Выход</a>
+            <a type="submit" href="/auth/exit">Выход</a>
         </nav>
         <div class="container">
             <table class="table">
@@ -36,6 +43,8 @@
                 </tr>
             </table>
         </div>
+        
+        
         <nav class="navbar fixed-bottom navbar-dark bg-dark">
             
         </nav>
