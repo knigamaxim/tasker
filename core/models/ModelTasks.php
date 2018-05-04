@@ -45,7 +45,7 @@ class ModelTasks extends AbstractModel {
 
     public function archive() {
 
-        $query = "select tasks.name, tasks.description, status.name as 'status.name', priority.name as 'priority.name', tasks.start_date, tasks.deadline, users.name as 'users.name' from " . $this->table . " inner join tasklist.status on tasks.status_id = status.id inner join tasklist.priority on tasks.priority_id= priority.id inner join tasklist.users on users.id=tasks.user_id where status_id=3 and users.login='".$_SESSION['login']."';";
+        $query = "select tasks.name, tasks.description, status.name as 'status.name', priority.name as 'priority.name', tasks.start_date, tasks.end_date, tasks.deadline, users.name as 'users.name' from " . $this->table . " inner join tasklist.status on tasks.status_id = status.id inner join tasklist.priority on tasks.priority_id= priority.id inner join tasklist.users on users.id=tasks.user_id where status_id=3 and users.login='".$_SESSION['login']."';";
         $result = $this->db->query($query);
         if ($result) {
             return $result->fetch_all(MYSQLI_ASSOC);
