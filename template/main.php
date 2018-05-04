@@ -9,6 +9,7 @@
         <style>
             .container{
                 margin: 0;
+                max-width: 95%;
             }   
             table,tr,td,th {
                 white-space: nowrap;
