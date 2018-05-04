@@ -1,4 +1,4 @@
-<h2 style="text-align: center"> Не подтверждено</h2>
+<h2 style="text-align: center">Новые задания:</h2>
 <?php
 $i = 1;
 foreach ($this->tasks as $task_item):

@@ -30,8 +30,8 @@
                 <tr>
                     <td>
                         <nav class="nav flex-column " >
-                            <a class="nav-link" href="/tasks/index">Назначенные</a>
-                            <a class="nav-link" href="/tasks/my">Выполняемые</a>
+                            <a class="nav-link" href="/tasks/">Новое задание</a>
+                            <a class="nav-link" href="/tasks/inprogress">Выполняемые</a>
                             <a class="nav-link" href="/tasks/appointed">Мои задачи</a>
                             <a class="nav-link" href="/tasks/archive">Архив</a>
                             <a class="nav-link" href="/tasks/add">Добавить задачу</a>
