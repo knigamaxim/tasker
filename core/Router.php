@@ -28,7 +28,7 @@ class Router {
 		//для переадресации числовых методов на __call
 		$obj->$action_method();
 	    } else {
-		if (method_exists($obj, $action_method)) {
+		if (method_exists($obj, $action_method)) {                    
 		    $obj->$action_method();
 		} else {
 		    self::notFoundAction();

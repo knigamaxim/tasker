@@ -35,7 +35,7 @@
                             <a class="nav-link" href="/tasks/appointed">Мои задачи</a>
                             <a class="nav-link" href="/tasks/archive">Архив</a>
                             <a class="nav-link" href="/tasks/add">Добавить задачу</a>
-                            <a class="nav-link" href="#">Все пользователи</a>
+                            <a class="nav-link" href="/users/">Все пользователи</a>
                         </nav>
                     </td>
                     <td>

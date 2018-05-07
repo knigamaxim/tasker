@@ -6,16 +6,16 @@
             </div>
             <div class="login-form">
                 <div class="control-group">
-                    <input type="text" class="login-field" placeholder="Имя" name="name" id="name" autofocus>
-                    <label class="login-field-icon fui-user" for="name"></label>
+                    <input type="text" class="login-field" placeholder="Логин" name="login" id="login">
+                    <label class="login-field-icon fui-user" for="login"></label>
                 </div>
                 <div class="control-group">
                     <input type="text" class="login-field" placeholder="Фамилия" name="surname" id="surname">
                     <label class="login-field-icon fui-user" for="surname"></label>
                 </div>
                 <div class="control-group">
-                    <input type="text" class="login-field" placeholder="Логин" name="login" id="login">
-                    <label class="login-field-icon fui-user" for="login"></label>
+                    <input type="text" class="login-field" placeholder="Имя" name="name" id="name" autofocus>
+                    <label class="login-field-icon fui-user" for="name"></label>
                 </div>
                 <div class="control-group">
                     <input type="password" class="login-field" placeholder="Пароль" name="password" id="pass">

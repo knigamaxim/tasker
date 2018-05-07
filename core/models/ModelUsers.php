@@ -1,7 +1,7 @@
 <?php
 
 namespace core\models;
-
+use core\models\AbstractModel;
 use mysqli;
 
 class ModelUsers extends AbstractModel {

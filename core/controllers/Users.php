@@ -1,17 +1,25 @@
 <?php
 
+namespace core\controllers;
+
+use core\models\ModelUsers;
+use core\Router;
+
 class Users extends AbstractController {
 
     public function __construct() {
-	parent::__construct();
-	$this->model = new ModelUsers();
-	$this->views->template = "main_template.php";
+        if (!Auth::getAuthLogin()) {
+            Router::redirect('auth/');
+        }
+        parent::__construct();
+        $this->model = new ModelUsers();
+        $this->viewer->template = "main.php";
     }
 
     public function action_index() {
-	$this->views->users = $this->model->all();
-	$this->views->content_view = 'users.php';
-	$this->views->show();
+        $this->viewer->users = $this->model->all();
+        $this->viewer->content_view = 'users_index_view.php';
+        $this->viewer->show();
     }
 
 }
