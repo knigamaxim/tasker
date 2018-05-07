@@ -18,7 +18,7 @@
             <td><input type="date" name="deadline"></td>
         </tr>
         <tr>
-            <td colspan="2"><textarea name="description"></textarea></td>
+            <td colspan="2"><textarea rows="10" cols="45" name="description"></textarea></td>
         </tr>
         <tr>
             <td>Дать задание:</td>
