@@ -43,7 +43,7 @@ class Tasks extends AbstractController {
     }
 
     public function action_add() {
-        $this->viewer->tasks = $this->model->add();
+//        $this->viewer->tasks = $this->model->add();
         $this->viewer->content_view = 'tasks_add_view.php';
         $this->viewer->show();
     }

@@ -14,6 +14,10 @@ foreach ($this->tasks as $task_item):
         <tr>
             <th rowspan="4">Описание</th>
             <td class='with-br' colspan="3" rowspan="4"><?= $task_item['description'] ?></td>
+            <th>Исполнитель</th>        
+            <td><?= $task_item['users.login'] ?></td>
+        </tr>
+        <tr>
             <th>Приоритет</th>        
             <td><?= $task_item['priority.name'] ?></td>
         </tr>

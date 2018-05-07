@@ -44,7 +44,8 @@ class Auth extends AbstractController {
 
         if ($user_item) {
             if (password_verify($user['password'], $user_item->password)) {
-                $_SESSION['login'] = $user_item->login;
+                $_SESSION['id'] = $user_item->id;
+                $_SESSION['login'] = $user_item->login;                
                 Router::redirect('tasks/');
             } else {
                 Router::redirect('auth/');
