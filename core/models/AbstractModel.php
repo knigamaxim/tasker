@@ -19,7 +19,7 @@ abstract class AbstractModel {
     public $table;
 
     public function __construct() {
-        $this->db = new mysqli('localhost', 'root', 'Px24r49', 'tasklist');
+        $this->db = new mysqli('localhost', 'root', '', 'tasklist');
         $this->db->set_charset("utf8");
     }
 
