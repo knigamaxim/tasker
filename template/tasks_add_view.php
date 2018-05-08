@@ -1,6 +1,9 @@
 <form method="POST" action="/tasks/save">
     <table>
         <tr>
+            <th colspan="2"><h2>Добавить задачу</h2></th>
+        </tr>
+        <tr>
             <td>Название:</td>
             <td><input type="text" name="name"></td>
         </tr>
