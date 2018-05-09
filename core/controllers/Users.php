@@ -17,7 +17,7 @@ class Users extends AbstractController {
     }
 
     public function action_index() {
-        $this->viewer->users = $this->model->all();
+        $this->viewer->users = $this->model->allUsers();
         $this->viewer->content_view = 'users_index_view.php';
         $this->viewer->show();
     }

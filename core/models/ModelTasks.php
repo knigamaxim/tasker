@@ -61,8 +61,27 @@ class ModelTasks extends AbstractModel {
         }
         return false;
     }
-    
-        public function addTask(array $task) {
+
+    public function selectPriority() {
+
+        $query = "select * from priority";
+        $result = $this->db->query($query);
+        if ($result) {
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+        return false;
+    }
+
+    public function allUsers() {
+        $query = "SELECT * FROM users";
+        $result = $this->db->query($query);
+        if ($result) {
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+        return false;
+    }
+
+    public function addTask(array $task) {
         if ($this->db->connect_errno === 0) {
             $query = "INSERT INTO " . $this->table . "(`id`, `name`, `user_id`, `description`, `status_id`, `priority_id`, `start_date`, `end_date`, `deadline`, `master_id`) VALUES (NULL, `" . $user['name'] . "`, `" . $user['user_id'] . "`, `" . $user['description'] . "`, `" . $user['status_id'] . "`, `" . $user['priority_id'] . "`, `" . $user['start_date'] . "`, NULL, `" . $user['deadline'] . "`, `" . $user['master_id'] . "`";
             return $this->db->query($query);

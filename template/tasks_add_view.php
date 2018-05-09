@@ -11,8 +11,9 @@
             <td>Приоритет:</td>
             <td>
                 <select name="priority">
-                    <option>Пункт 1</option>
-                    <option>Пункт 2</option>
+                    <?php foreach ($this->priority as $priority_item): ?>     
+                    <option value="<?= $priority_item['id'] ?>"><?= $priority_item['name'] ?></option>
+                    <?php endforeach ?>
                 </select>
             </td>
         </tr>
@@ -27,13 +28,18 @@
             <td>Дать задание:</td>
             <td>             
                 <select name="user_id">
-                    <option>Пункт 1</option>
-                    <option>Пункт 2</option>
+                    <?php foreach ($this->users as $users_item): ?>     
+                    <option value="<?= $users_item['id'] ?>"><?= $users_item['login'].' - '.$users_item['surname'] ?></option>
+                    <?php endforeach ?>
                 </select>
             </td>
         </tr>
         <tr>
-            <td colspan="2"><input type="submit" value="Добавить"></td>
+            <td colspan="2">
+                <input type="hidden" name="" value="">
+                <input type="submit" value="Добавить">
+            </td>
         </tr>
     </table>
+    
 </form>
