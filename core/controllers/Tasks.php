@@ -49,4 +49,24 @@ class Tasks extends AbstractController {
         $this->viewer->show();
     }
 
+    public function action_addTask() {
+        $task = filter_input_array(INPUT_POST);   
+        var_dump($task);
+        if ($this->taskValidate($task)) {            
+            $this->model->addTask($task);
+        }
+        Router::redirect('tasks/add');
+    }
+    public function taskValidate(array $task) {
+//        if ($user['password'] !== $user['password_confirm']) {
+//            return false;
+//        }
+//        $user_item = $this->model->selectByName($user['login']);
+//        if ($user_item) {
+//            return false;
+//        }
+        return true;
+    
+    }
+
 }

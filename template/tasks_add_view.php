@@ -1,4 +1,4 @@
-<form method="POST" action="/tasks/save">
+<form method="POST" action="/tasks/addTask">
     <table>
         <tr>
             <th colspan="2"><h2>Добавить задачу</h2></th>
@@ -10,7 +10,7 @@
         <tr>
             <td>Приоритет:</td>
             <td>
-                <select name="priority">
+                <select name="priority_id">
                     <?php foreach ($this->priority as $priority_item): ?>     
                     <option value="<?= $priority_item['id'] ?>"><?= $priority_item['name'] ?></option>
                     <?php endforeach ?>
@@ -25,7 +25,7 @@
             <td colspan="2"><textarea rows="10" cols="45" name="description"></textarea></td>
         </tr>
         <tr>
-            <td>Дать задание:</td>
+            <td>Дать задание:</td> 
             <td>             
                 <select name="user_id">
                     <?php foreach ($this->users as $users_item): ?>     
@@ -36,7 +36,9 @@
         </tr>
         <tr>
             <td colspan="2">
-                <input type="hidden" name="" value="">
+                <input type="hidden" name="statrus_id" value="1">
+                <input type="hidden" name="master_id" value="<?= $_SESSION['id']; ?>">
+                <input type="hidden" name="add_date" value="<?= date("d,m,y"); ?>"> 
                 <input type="submit" value="Добавить">
             </td>
         </tr>

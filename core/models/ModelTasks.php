@@ -83,7 +83,7 @@ class ModelTasks extends AbstractModel {
 
     public function addTask(array $task) {
         if ($this->db->connect_errno === 0) {
-            $query = "INSERT INTO " . $this->table . "(`id`, `name`, `user_id`, `description`, `status_id`, `priority_id`, `start_date`, `end_date`, `deadline`, `master_id`) VALUES (NULL, `" . $user['name'] . "`, `" . $user['user_id'] . "`, `" . $user['description'] . "`, `" . $user['status_id'] . "`, `" . $user['priority_id'] . "`, `" . $user['start_date'] . "`, NULL, `" . $user['deadline'] . "`, `" . $user['master_id'] . "`";
+            $query = "INSERT INTO `tasks` (`id`, `name`, `user_id`, `description`, `status_id`, `priority_id`, `add_date`, `start_date`, `end_date`, `deadline`, `master_id`) VALUES (NULL, '" . $task['name'] . "', '" . $task['user_id'] . "', '" . $task['description'] . "', '" . $task['statrus_id'] . "', '" . $task['priority_id'] . "', '" . $task['add_date'] . "', NULL, NULL, '" . $task['deadline'] . "', '" . $task['master_id'] . "');";
             return $this->db->query($query);
         }
     }

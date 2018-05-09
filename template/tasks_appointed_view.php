@@ -1,9 +1,10 @@
 <h2 style="text-align: center">Мои задачи</h2>
-<?php
-$i = 1;
-foreach ($this->tasks as $task_item):
-    ?>
-    <table>
+<table>
+    <?php
+    $i = 1;
+    foreach ($this->tasks as $task_item):
+        ?>
+
         <tr>
             <td rowspan="5"><?= $i . '.' ?></td>
             <th>Название</th>
@@ -29,7 +30,8 @@ foreach ($this->tasks as $task_item):
             <th>Выполнить до:</th>        
             <td><?= $task_item['deadline'] ?></td>
         </tr>
-    </table>
 
-    <?php $i++ ?>
-<?php endforeach ?>
+
+        <?php $i++ ?>
+    <?php endforeach ?>
+</table>

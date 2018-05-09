@@ -1,9 +1,10 @@
 <h2 style="text-align: center">Архив выполненных задач</h2>
-<?php
-$i = 1;
-foreach ($this->tasks as $task_item):
-    ?>
-    <table>
+<table>
+    <?php
+    $i = 1;
+    foreach ($this->tasks as $task_item):
+        ?>
+
         <tr>
             <td rowspan="5"><?= $i . '.' ?></td>
             <th>Название</th>
@@ -29,10 +30,11 @@ foreach ($this->tasks as $task_item):
             <th>Сроки:</th>        
             <td><?= $task_item['deadline'] ?></td>
         </tr>
-    </table>
 
-    <?php $i++ ?>
+
+        <?php $i++ ?>
 <?php endforeach ?>
+</table>
 
 
 
