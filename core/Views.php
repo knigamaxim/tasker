@@ -18,5 +18,11 @@ class Views {
     public function show() {
 	include_once 'template/'. $this->template;
     }
+        //ПРоверка даты и возврат ее в нормальном формате
+    public function checkDate ($date) {
+                if (!is_null($date)) {
+                    return date("d-m-Y", strtotime($date));
+                }
+    }
     
 }

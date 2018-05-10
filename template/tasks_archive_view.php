@@ -6,30 +6,35 @@
         ?>
 
         <tr>
-            <td rowspan="5"><?= $i . '.' ?></td>
+            <td rowspan="6"><?= $i . '.' ?></td>
             <th>Название</th>
             <th colspan="3" ><?= $task_item['name'] ?></th>
             <th>Добавлено</th>
             <td><?= $task_item['users.login'] ?></td>
         </tr>
         <tr>
-            <th rowspan="4">Описание</th>
-            <td class='with-br' colspan="3" rowspan="4"><?= $task_item['description'] ?></td>
+            <th rowspan="5">Описание</th>
+            <td class='with-br' colspan="3" rowspan="5"><?= $task_item['description'] ?></td>
             <th>Статус</th>        
             <td><?= $task_item['status.name'] ?></td>
         </tr>
         <tr>
-            <th>Приоритет</th>        
-            <td><?= $task_item['priority.name'] ?></td>
+            <th>Выдано:</th>        
+            <td><?= $this->checkDate($task_item['add_date']) ?></td>
+        </tr>
+        <tr>
+            <th>В работе с:</th>        
+            <td><?= $this->checkDate($task_item['start_date']) ?></td>
         </tr>
         <tr>
             <th>Завершено:</th>        
-            <td><?= $task_item['end_date'] ?></td>
+            <td><?= $this->checkDate($task_item['end_date']) ?></td>
         </tr>
         <tr>
             <th>Сроки:</th>        
-            <td><?= $task_item['deadline'] ?></td>
+            <td><?= $this->checkDate($task_item['deadline']) ?></td>
         </tr>
+
 
 
         <?php $i++ ?>
