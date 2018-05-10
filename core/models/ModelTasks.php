@@ -15,14 +15,6 @@ class ModelTasks extends AbstractModel {
         $this->table = 'tasks';
     }
 
-//    public function addNews($news) {
-//	$query="INSERT INTO ".$this->table." (name, short_text, text, date) VALUES ('".$news['name']."', '".$news['short_text']."', '".$news['text']."', '".$news['date']."')";	
-//	return $this->db->query($query);
-//    }
-
-
-
-
     public function all_inprogress() {
 
         $query = "select tasks.name, tasks.description, status.name as 'status.name', priority.name as 'priority.name', tasks.start_date, tasks.add_date, tasks.deadline, users.login as 'users.login', tasks.user_id from " . $this->table . " inner join tasklist.status on tasks.status_id = status.id inner join tasklist.priority on tasks.priority_id= priority.id inner join tasklist.users on users.id=tasks.master_id where status_id=2 and tasks.user_id='" . $_SESSION['id'] . "';";
@@ -34,7 +26,7 @@ class ModelTasks extends AbstractModel {
     }
 
     public function new_tasks() {
-        $query = "select tasks.name, tasks.description, status.name as 'status.name', priority.name as 'priority.name', tasks.start_date, tasks.deadline, users.login as 'users.login', tasks.user_id from " . $this->table . " inner join tasklist.status on tasks.status_id = status.id inner join tasklist.priority on tasks.priority_id= priority.id inner join tasklist.users on users.id=tasks.master_id where status_id=1 and tasks.user_id='" . $_SESSION['id'] . "';";
+        $query = "select tasks.id, tasks.name, tasks.description, status.name as 'status.name', priority.name as 'priority.name', tasks.start_date, tasks.add_date, tasks.deadline, users.login as 'users.login', tasks.user_id from " . $this->table . " inner join tasklist.status on tasks.status_id = status.id inner join tasklist.priority on tasks.priority_id= priority.id inner join tasklist.users on users.id=tasks.master_id where status_id=1 and tasks.user_id='" . $_SESSION['id'] . "';";
         $result = $this->db->query($query);
         if ($result) {
             return $result->fetch_all(MYSQLI_ASSOC);
@@ -87,5 +79,12 @@ class ModelTasks extends AbstractModel {
             return $this->db->query($query);
         }
     }
+    public function changStatus($task_id, $status, $fild_date='start_date' ) {
+        if ($this->db->connect_errno === 0) {            
+            $query = "UPDATE `tasks` SET `status_id` = ".$status.", ".$fild_date."='".date('Y-m-d')."' WHERE `tasks`.`id` = ".$task_id.";";            
+            return $this->db->query($query);
+        }
+    }
+    
 
 }

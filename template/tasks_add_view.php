@@ -38,7 +38,7 @@
             <td colspan="2">
                 <input type="hidden" name="statrus_id" value="1">
                 <input type="hidden" name="master_id" value="<?= $_SESSION['id']; ?>">
-                <input type="hidden" name="add_date" value="<?= date("d,m,y"); ?>"> 
+                <input type="hidden" name="add_date" value="<?= date("Y,m,d"); ?>"> 
                 <input type="submit" value="Добавить">
             </td>
         </tr>

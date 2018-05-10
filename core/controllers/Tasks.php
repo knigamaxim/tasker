@@ -50,8 +50,7 @@ class Tasks extends AbstractController {
     }
 
     public function action_addTask() {
-        $task = filter_input_array(INPUT_POST);   
-        var_dump($task);
+        $task = filter_input_array(INPUT_POST);           
         if ($this->taskValidate($task)) {            
             $this->model->addTask($task);
         }
@@ -65,8 +64,14 @@ class Tasks extends AbstractController {
 //        if ($user_item) {
 //            return false;
 //        }
-        return true;
-    
+        return true;    
+    }
+        public function action_changStatus() {
+        $task = filter_input_array(INPUT_POST);
+        if (!is_null($task)) {              
+            $this->model->changStatus($task['task_id'], $task['status_id']);
+        }
+        Router::redirect('tasks/');
     }
 
 }
