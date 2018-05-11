@@ -30,15 +30,15 @@
             <td><?= $this->checkDate($task_item['deadline']) ?></td>
         </tr>
         <tr>
-
             <td colspan="2">
                 <form method="POST" action="/tasks/changStatus">
                     <input type="hidden" name="task_id" value="<?= $task_item['id'] ?>">
                     <input type="hidden" name="status_id" value="2">
+                    <input type="hidden" name="field_bd" value="start_date">
+                    <input type="hidden" name="redirect" value="tasks">   
                     <input type="submit" value="Активировать задание">
                 </form>
             </td> 
-
         </tr>
 
 

@@ -6,15 +6,15 @@
         ?>
 
         <tr>
-            <td rowspan="6"><?= $i . '.' ?></td>
+            <td rowspan="7"><?= $i . '.' ?></td>
             <th>Название</th>
             <th colspan="3" ><?= $task_item['name'] ?></th>
             <th>Статус</th>        
             <td><?= $task_item['status.name'] ?></td>
         </tr>
         <tr>
-            <th rowspan="5">Описание</th>
-            <td class='with-br' colspan="3" rowspan="5"><?= $task_item['description'] ?></td>
+            <th rowspan="6">Описание</th>
+            <td class='with-br' colspan="3" rowspan="6"><?= $task_item['description'] ?></td>
             <th>Исполнитель</th>        
             <td><?= $task_item['users.login'] ?></td>
         </tr>
@@ -33,6 +33,15 @@
         <tr>
             <th>Выполнить до:</th>        
             <td><?= $this->checkDate($task_item['deadline']) ?></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <form method="POST" action="/tasks/delete">
+                    <input type="hidden" name="task_id" value="<?= $task_item['id'] ?>">
+                    <input type="hidden" name="redirect" value="tasks/appointed">   
+                    <input type="submit" value="Удалить / Отменить">
+                </form>
+            </td> 
         </tr>
 
 

@@ -1,7 +1,5 @@
+<h2 style="text-align: center">Все пользователи:</h2>
 <table>
-    <tr>
-        <th colspan="5">Все пользователи</th>
-    </tr>
     <tr>
         <th>№</th>
         <th>Логин</th>

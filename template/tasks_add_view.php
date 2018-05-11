@@ -19,7 +19,7 @@
         </tr>
         <tr>
             <td>Выполнить до:</td>
-            <td><input type="date" name="deadline"></td>
+            <td><input type="date" name="deadline" value="<?= date('Y-m-d') ?>"></td>
         </tr>
         <tr>
             <td colspan="2"><textarea rows="10" cols="45" name="description"></textarea></td>

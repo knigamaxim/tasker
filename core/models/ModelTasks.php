@@ -17,7 +17,7 @@ class ModelTasks extends AbstractModel {
 
     public function all_inprogress() {
 
-        $query = "select tasks.name, tasks.description, status.name as 'status.name', priority.name as 'priority.name', tasks.start_date, tasks.add_date, tasks.deadline, users.login as 'users.login', tasks.user_id from " . $this->table . " inner join tasklist.status on tasks.status_id = status.id inner join tasklist.priority on tasks.priority_id= priority.id inner join tasklist.users on users.id=tasks.master_id where status_id=2 and tasks.user_id='" . $_SESSION['id'] . "';";
+        $query = "select tasks.id, tasks.name, tasks.description, status.name as 'status.name', priority.name as 'priority.name', tasks.start_date, tasks.add_date, tasks.deadline, users.login as 'users.login', tasks.user_id from " . $this->table . " inner join tasklist.status on tasks.status_id = status.id inner join tasklist.priority on tasks.priority_id= priority.id inner join tasklist.users on users.id=tasks.master_id where status_id=2 and tasks.user_id='" . $_SESSION['id'] . "';";
         $result = $this->db->query($query);
         if ($result) {
             return $result->fetch_all(MYSQLI_ASSOC);
@@ -46,7 +46,7 @@ class ModelTasks extends AbstractModel {
 
     public function appointed() {
 
-        $query = "select tasks.name, tasks.description, status.name as 'status.name', priority.name as 'priority.name', tasks.start_date, tasks.deadline, tasks.add_date, users.login as 'users.login', tasks.master_id from " . $this->table . " inner join tasklist.status on tasks.status_id = status.id inner join tasklist.priority on tasks.priority_id= priority.id inner join tasklist.users on users.id=tasks.user_id where tasks.master_id='" . $_SESSION['id'] . "';";
+        $query = "select tasks.id,tasks.name, tasks.description, status.name as 'status.name', priority.name as 'priority.name', tasks.start_date, tasks.deadline, tasks.add_date, users.login as 'users.login', tasks.master_id from " . $this->table . " inner join tasklist.status on tasks.status_id = status.id inner join tasklist.priority on tasks.priority_id= priority.id inner join tasklist.users on users.id=tasks.user_id where tasks.master_id='" . $_SESSION['id'] . "';";
         $result = $this->db->query($query);
         if ($result) {
             return $result->fetch_all(MYSQLI_ASSOC);
@@ -81,10 +81,17 @@ class ModelTasks extends AbstractModel {
     }
     public function changStatus($task_id, $status, $fild_date='start_date' ) {
         if ($this->db->connect_errno === 0) {            
-            $query = "UPDATE `tasks` SET `status_id` = ".$status.", ".$fild_date."='".date('Y-m-d')."' WHERE `tasks`.`id` = ".$task_id.";";            
+            $query = "UPDATE `tasks` SET `status_id` = ".$status.", ".$fild_date."='".date('Y-m-d')."' WHERE `tasks`.`id` = ".$task_id.";";   
             return $this->db->query($query);
         }
     }
+    public function deleteTusk($task_id) {
+        if ($this->db->connect_errno === 0) {            
+            $query = "DELETE FROM `tasks` WHERE `tasks`.`id` =  ".$task_id.";";   
+            return $this->db->query($query);
+        }
+    }
+    
     
 
 }

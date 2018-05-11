@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.7.3
 -- https://www.phpmyadmin.net/
 --
--- Хост: localhost
--- Время создания: Май 09 2018 г., 12:13
--- Версия сервера: 5.7.22-0ubuntu0.16.04.1
--- Версия PHP: 7.0.28-0ubuntu0.16.04.1
+-- Хост: 127.0.0.1:3306
+-- Время создания: Май 11 2018 г., 15:17
+-- Версия сервера: 5.6.37
+-- Версия PHP: 5.5.38
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -87,14 +87,13 @@ CREATE TABLE `tasks` (
 --
 
 INSERT INTO `tasks` (`id`, `name`, `user_id`, `description`, `status_id`, `priority_id`, `add_date`, `start_date`, `end_date`, `deadline`, `master_id`) VALUES
-(1, 'Хоз работы', 3, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\n2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 1, 1, NULL, '2018-04-26', NULL, '2018-04-30', 4),
-(2, 'Покраска', 4, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 1, 3, NULL, '2018-04-26', NULL, '2018-04-29', 1),
-(3, 'Тарировка каналов на АПК', 4, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 1, 3, NULL, '2018-04-24', NULL, '2018-04-28', 1),
-(4, 'Тест взята в обработку', 4, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 2, 3, NULL, '2018-04-25', NULL, '2018-04-28', 1),
-(5, 'тест Готово', 4, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 3, 3, NULL, '2018-04-24', '2018-04-23', '2018-04-27', 1),
-(6, 'qqqqqqq', 2, 'wwwwwwwwwwwww', 1, 3, '2018-05-09', '2018-05-16', NULL, '2018-06-06', 4),
-(7, 'ttttt', 2, 'aaaaaaaaaaaaaaaa', 1, 2, '2009-05-18', NULL, NULL, '2019-01-02', 4),
-(8, 'iiiiiiiiii', 3, 'iiiiiiiiiiiiiiiiiiiiiiiii', 1, 2, '2009-05-18', NULL, NULL, '2019-01-01', 4);
+(2, 'Покраска', 4, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 3, 3, '2018-05-01', '2018-04-26', '2018-05-11', '2018-04-29', 1),
+(3, 'Тарировка каналов на АПК', 4, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 3, 3, '2018-05-01', '2010-05-18', '2018-05-11', '2018-04-28', 1),
+(4, 'Тест взята в обработку', 4, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 2, 3, '2018-05-01', '2018-04-25', NULL, '2018-04-28', 1),
+(5, 'тест Готово', 4, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 3, 3, '2018-05-01', '2018-04-24', '2018-04-23', '2018-04-27', 1),
+(16, 'Новая задача 3', 2, 'Новая задача 3\r\nприоритет низкий\r\nВыполнить до: 02.01.2019\r\nисполнитель ВАТМАН\r\n\r\nдобавлено 11-05-2018', 3, 1, '2018-05-11', '2018-05-11', '2018-05-11', '2019-01-02', 4),
+(18, 'Новая задача 1 kkk1', 4, 'Новая задача 1 kkk1\r\nприоритет средний\r\nВыполнить до: 01.01.2019\r\nисполнитель ккк1\r\n\r\nдобавлено 11-05-2018', 1, 2, '2018-05-11', NULL, NULL, '2019-01-01', 2),
+(19, 'qqqqqqqqqqqqqqq', 3, 'asdasdasdasdas Побриться)))))', 3, 1, '2018-05-11', '2018-05-11', '2018-05-11', '2018-05-15', 4);
 
 -- --------------------------------------------------------
 
@@ -164,25 +163,21 @@ ALTER TABLE `users`
 --
 ALTER TABLE `priority`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- AUTO_INCREMENT для таблицы `status`
 --
 ALTER TABLE `status`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- AUTO_INCREMENT для таблицы `tasks`
 --
 ALTER TABLE `tasks`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
 --
 -- Ограничения внешнего ключа сохраненных таблиц
 --

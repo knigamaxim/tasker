@@ -57,21 +57,24 @@ class Tasks extends AbstractController {
         Router::redirect('tasks/add');
     }
     public function taskValidate(array $task) {
-//        if ($user['password'] !== $user['password_confirm']) {
-//            return false;
-//        }
-//        $user_item = $this->model->selectByName($user['login']);
-//        if ($user_item) {
-//            return false;
-//        }
+//TO DO Реализовать проверку.........
         return true;    
     }
         public function action_changStatus() {
         $task = filter_input_array(INPUT_POST);
         if (!is_null($task)) {              
-            $this->model->changStatus($task['task_id'], $task['status_id']);
+            $this->model->changStatus($task['task_id'], $task['status_id'], $task['field_bd']);
+            Router::redirect($task['redirect']);
         }
-        Router::redirect('tasks/');
+        
+    }
+        public function action_delete() {
+        $task = filter_input_array(INPUT_POST);
+        if (!is_null($task)) {              
+            $this->model->deleteTusk($task['task_id']);
+            Router::redirect($task['redirect']);
+        }
+        
     }
 
 }

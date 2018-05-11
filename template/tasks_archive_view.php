@@ -35,10 +35,8 @@
             <td><?= $this->checkDate($task_item['deadline']) ?></td>
         </tr>
 
-
-
         <?php $i++ ?>
-<?php endforeach ?>
+    <?php endforeach ?>
 </table>
 
 
